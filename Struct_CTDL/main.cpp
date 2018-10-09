@@ -1,15 +1,30 @@
-//
-//  main.cpp
-//  Struct_CTDL
-//
-//  Created by TT Nguyen on 10/9/18.
-//  Copyright © 2018 TT Nguyen. All rights reserved.
-//
-
 #include <iostream>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+using namespace std;
+
+struct student {
+    string fullName;
+    string ID;
+    int credit;
+};
+
+void inputStudent(student &A) {
+    cout << "Enter your name: ";
+    getline(cin, A.fullName);
+    cout << "Enter your ID: ";
+    getline(cin, A.ID);
+    cout << "Enter your credit that you studied: ";
+    cin >> A.credit;
+}
+
+void printStudent(student A) {
+    cout << "Name  : " << A.fullName << endl;
+    cout << "ID    : " << A.ID << endl;
+    cout << "Credit: " << A.credit << endl;
+}
+
+int main() {
+    student a;
+    inputStudent(a);
+    printStudent(a);
 }
